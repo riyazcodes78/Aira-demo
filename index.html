@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIRA — My Property Journey</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+:root{--ink:#161616;--muted:#737373;--paper:#f5f3ef;--white:#fff;--gold:#b8884b;--line:#e5e0d7;--soft:#efebe4}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif}button{font:inherit;cursor:pointer}
+.nav{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;position:sticky;top:0;z-index:20}.logo{font-weight:700;letter-spacing:.2em;font-size:20px}.logo b{color:var(--gold)}.navright{display:flex;align-items:center;gap:22px;color:#777;font-size:12px}.avatar{width:35px;height:35px;border-radius:50%;background:#171717;color:#fff;display:grid;place-items:center;font-size:11px}
+.hero{max-width:1380px;margin:auto;padding:70px 6vw 45px;display:grid;grid-template-columns:1fr .78fr;gap:50px}.eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,76px);font-weight:500;line-height:1;letter-spacing:-.045em;margin:16px 0}.hero p{font-size:16px;line-height:1.7;color:var(--muted);max-width:590px}.hero strong{color:var(--ink)}.heroBtns{display:flex;gap:10px;margin-top:25px}.black{background:#171717;color:#fff;border:0;border-radius:11px;padding:13px 17px}.white{background:#fff;border:1px solid #d9d3ca;border-radius:11px;padding:13px 17px}
+.summary{background:#171717;color:#fff;border-radius:27px;padding:27px;box-shadow:0 25px 65px #0002}.summarytop{display:flex;justify-content:space-between}.live{font-size:10px;background:#243a2d;color:#a8ddb7;padding:7px 10px;border-radius:99px}.summary h2{font-family:'Playfair Display',serif;font-size:33px;font-weight:500;margin:55px 0 5px}.summary p{color:#aaa;font-size:12px}.progress{height:4px;background:#ffffff1c;border-radius:10px;margin:25px 0 12px}.progress i{display:block;height:100%;width:58%;background:#c49a63;border-radius:10px}.progressrow{display:flex;justify-content:space-between;color:#999;font-size:10px}.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:24px}.stat{background:#222;border-radius:13px;padding:14px}.stat b{font-size:21px}.stat span{display:block;color:#999;font-size:10px;margin-top:4px}
+.main{max-width:1380px;margin:auto;padding:20px 6vw 90px}.sectionTitle{display:flex;justify-content:space-between;align-items:end;margin:28px 0 20px}.sectionTitle h2{font-family:'Playfair Display',serif;font-weight:500;font-size:37px;margin:6px 0}.sectionTitle p{color:#777;font-size:12px;margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.property{background:#fff;border:1px solid var(--line);border-radius:21px;overflow:hidden}.photo{height:210px;position:relative;background:linear-gradient(135deg,#cbb99f,#655b52)}.photo.two{background:linear-gradient(135deg,#a4a69e,#333635)}.photo.three{background:linear-gradient(135deg,#d1b18a,#75604b)}.match{position:absolute;left:13px;top:13px;background:#fff;border-radius:99px;padding:7px 9px;font-size:9px;font-weight:700}.save{position:absolute;right:13px;top:13px;width:34px;height:34px;border:0;border-radius:50%;background:#fff;font-size:17px}.pbody{padding:18px}.pbody h3{margin:0 0 5px;font-size:17px}.meta{font-size:11px;color:#858585}.price{font-size:19px;font-weight:700;margin-top:13px}.pactions{display:flex;justify-content:space-between;gap:8px;margin-top:16px}.outline{border:1px solid #ddd7ce;background:#fff;border-radius:10px;padding:10px 12px;font-size:11px}.gold{border:0;background:var(--gold);color:#fff;border-radius:10px;padding:10px 12px;font-size:11px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px}.panel h3{margin:7px 0 4px;font-size:23px}.panel>p{color:#777;font-size:12px;line-height:1.6}.timeline{margin-top:18px;display:grid;gap:14px}.item{display:flex;gap:11px}.dot{width:25px;height:25px;border-radius:50%;background:#171717;color:#fff;display:grid;place-items:center;font-size:9px;flex:none}.item b{font-size:12px}.item span{display:block;color:#888;font-size:10px;margin-top:3px}.agentbox{display:flex;align-items:center;gap:12px;background:var(--soft);border-radius:15px;padding:14px;margin-top:17px}.agentpic{width:39px;height:39px;border-radius:50%;background:#cdb89c}.agentbox b{font-size:12px}.agentbox span{display:block;font-size:10px;color:#777;margin-top:3px}.agentbox button{margin-left:auto;background:#171717;color:#fff;border:0;border-radius:9px;padding:9px 11px;font-size:10px}
+.compare{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}.compare div{background:var(--soft);padding:12px;border-radius:11px;font-size:10px}.compare b{display:block;font-size:13px;margin-bottom:3px}
+.bottom{margin-top:16px;background:#171717;color:#fff;border-radius:25px;padding:28px;display:flex;justify-content:space-between;align-items:center}.bottom h2{font-family:'Playfair Display',serif;font-weight:500;font-size:31px;margin:0 0 7px}.bottom p{color:#aaa;margin:0;font-size:12px}.bottom button{background:#c09256;color:#fff;border:0;border-radius:11px;padding:13px 17px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:30;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.box{width:min(510px,100%);background:#fff;border-radius:24px;padding:27px}.close{float:right;border:0;background:none;font-size:23px}.box h2{font-family:'Playfair Display',serif;font-weight:500;font-size:31px;margin:12px 0}.box label{font-size:11px;color:#777}.box input,.box textarea{width:100%;padding:11px;border:1px solid #ddd7ce;border-radius:9px;margin-top:6px}.send{margin-top:13px;background:#171717;color:#fff;border:0;border-radius:10px;padding:12px 15px}
+.toast{position:fixed;right:20px;bottom:20px;background:#171717;color:#fff;border-radius:12px;padding:13px 16px;font-size:11px;display:none;z-index:40}.toast.show{display:block}
+@media(max-width:850px){.hero,.split{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.nav{padding:0 5vw}.navright span{display:none}.hero,.main{padding-left:5vw;padding-right:5vw}.bottom{display:block}.bottom button{margin-top:18px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="logo">AIRA<b>.</b></div><div class="navright"><span>MY JOURNEY</span><span>MY AGENT</span><div class="avatar">AM</div></div></nav>
+
+<section class="hero">
+<div>
+<div class="eyebrow">Your private property space</div>
+<h1>Everything your agent finds.<br><span style="color:#b8884b">One place for you.</span></h1>
+<p>AIRA already helps your agent manage your enquiry. <strong>This is where your side of the journey lives.</strong> See the properties selected for you, compare them, book a viewing, receive documents and stay connected with your agent.</p>
+<div class="heroBtns"><button class="black" onclick="go('matches')">See my properties →</button><button class="white" onclick="openM('Message Sarah')">Message my agent</button></div>
+</div>
+<div class="summary">
+<div class="summarytop"><span class="eyebrow" style="color:#c49a63">Alex Morgan</span><span class="live">● Agent connected</span></div>
+<h2>Your journey is 58% complete.</h2><p>2 properties shortlisted · 1 viewing requested · 2 new documents</p>
+<div class="progress"><i></i></div><div class="progressrow"><span>Brief</span><span>Match</span><span>Viewing</span><span>Decision</span></div>
+<div class="statrow"><div class="stat"><b>12</b><span>matched</span></div><div class="stat"><b>4</b><span>saved</span></div><div class="stat"><b>1</b><span>viewing</span></div></div>
+</div>
+</section>
+
+<main class="main" id="matches">
+<div class="sectionTitle"><div><div class="eyebrow">01 · Your matches</div><h2>Selected for your brief.</h2><p>Dubai · Buy · AED 2–3M · 2 bedroom</p></div><span class="meta">12 matches from your agent</span></div>
+<div class="grid">
+<div class="property"><div class="photo"><span class="match">94% MATCH</span><button class="save" onclick="save(this)">♡</button></div><div class="pbody"><h3>Marina Vista Residences</h3><div class="meta">Dubai Marina · 2 bed · 1,420 sq ft</div><div class="price">AED 2.35M</div><div class="pactions"><button class="outline" onclick="openM('Marina Vista Residences')">View property</button><button class="gold" onclick="openM('Book Marina Vista viewing')">Book viewing</button></div></div></div>
+<div class="property"><div class="photo two"><span class="match">89% MATCH</span><button class="save" onclick="save(this)">♡</button></div><div class="pbody"><h3>One Za'abeel</h3><div class="meta">Za'abeel · 2 bed · 1,610 sq ft</div><div class="price">AED 2.78M</div><div class="pactions"><button class="outline" onclick="openM('One Za\\'abeel')">View property</button><button class="gold" onclick="openM('Book One Za\\'abeel viewing')">Book viewing</button></div></div></div>
+<div class="property"><div class="photo three"><span class="match">86% MATCH</span><button class="save" onclick="save(this)">♡</button></div><div class="pbody"><h3>Creek Harbour</h3><div class="meta">Dubai Creek · 2 bed · 1,300 sq ft</div><div class="price">AED 2.15M</div><div class="pactions"><button class="outline" onclick="openM('Creek Harbour')">View property</button><button class="gold" onclick="openM('Book Creek Harbour viewing')">Book viewing</button></div></div></div>
+</div>
+
+<div class="split">
+<section class="panel"><div class="eyebrow">02 · Your next steps</div><h3>Nothing gets lost.</h3><p>Every action you take becomes part of the same journey your agent is managing.</p>
+<div class="timeline">
+<div class="item"><div class="dot">✓</div><div><b>Brief captured</b><span>2 bed · Dubai · AED 2–3M · investment</span></div></div>
+<div class="item"><div class="dot">✓</div><div><b>Properties matched</b><span>12 properties selected for you</span></div></div>
+<div class="item"><div class="dot">3</div><div><b>Viewing requested</b><span>Marina Vista · Thursday · 4:30 PM</span></div></div>
+<div class="item"><div class="dot">4</div><div><b>Decision</b><span>Compare, ask questions and request documents</span></div></div>
+</div></section>
+
+<section class="panel"><div class="eyebrow">03 · Your agent</div><h3>Same relationship. Better context.</h3><p>Your agent can see what you're interested in, what you've saved and what action you want next — without you repeating yourself.</p>
+<div class="agentbox"><div class="agentpic"></div><div><b>Sarah Williams</b><span>Senior Property Consultant</span></div><button onclick="openM('Message Sarah')">Message</button></div>
+<div class="compare"><div><b>4</b>saved</div><div><b>2</b>questions</div><div><b>1</b>viewing</div></div>
+</section>
+</div>
+
+<div class="split">
+<section class="panel"><div class="eyebrow">04 · Compare</div><h3>Decide without opening 10 tabs.</h3><p>Bring the properties your agent recommends into one simple comparison.</p><div class="compare"><div><b>AED 2.35M</b>Marina Vista</div><div><b>AED 2.78M</b>One Za'abeel</div><div><b>AED 2.15M</b>Creek Harbour</div></div><button class="outline" style="margin-top:18px" onclick="openM('Property comparison')">Open comparison →</button></section>
+<section class="panel"><div class="eyebrow">05 · Documents</div><h3>Your important files, attached to the journey.</h3><p>Brochures, floor plans and documents arrive where the decision happens — not buried in a chat thread.</p><div class="compare"><div><b>Brochure.pdf</b>Added today</div><div><b>Floorplan.pdf</b>Added today</div><div><b>ROI.pdf</b>View analysis</div></div><button class="outline" style="margin-top:18px" onclick="toast('Documents opened — prototype interaction')">Open documents →</button></section>
+</div>
+
+<div class="bottom"><div><h2>From lead to relationship.</h2><p>AIRA manages the brokerage workflow. This gives the customer a place to actually experience it.</p></div><button onclick="openM('Request a viewing')">Request a viewing →</button></div>
+</main>
+
+<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeM()">×</button><div class="eyebrow">Client action</div><h2 id="mt">Request</h2><label>Preferred date / time</label><input placeholder="e.g. Thursday, 4:30 PM"><label style="display:block;margin-top:13px">Message</label><textarea rows="4" placeholder="Anything you'd like your agent to know?"></textarea><button class="send" onclick="toast('Request sent to Sarah — prototype only');closeM()">Send to agent</button></div></div>
+<div class="toast" id="toast">Saved</div>
+<script>
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function openM(t){document.getElementById('mt').textContent=t;document.getElementById('modal').classList.add('show')}
+function closeM(){document.getElementById('modal').classList.remove('show')}
+function save(x){x.textContent=x.textContent==='♡'?'♥':'♡';toast(x.textContent==='♥'?'Added to shortlist':'Removed from shortlist')}
+function toast(t){let x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
+</script>
+</body></html>
